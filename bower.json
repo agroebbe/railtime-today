@@ -1,0 +1,11 @@
+{
+  "name": "my-angular-test-project",
+  "version": "1.0.0",
+  "main": "index.html",
+  "ignore": [".idea"],
+  "dependencies": {
+	"angular-ui-date": "latest"
+  },
+  "devDependencies": {
+  }
+}

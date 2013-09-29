@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Test Railtime</title>
+
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.css"/>
+    <script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
+    <script type="text/javascript" src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-date/src/date.js"></script>
+
+    <!-- ?? use bootstrap also -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="index.css">
+    <script type='text/javascript' src='index.js'></script>
+</head>
+<body>
+<div ng-app="myModule">
+    <div ng-controller="railtimeCtrl">
+        <h2>Railtime Lookup</h2>
+        <!-- <input type="date" ng-model="dateChosen"/> -->
+        <div>
+            <div class="form-horizontal">
+                <label>Date:</label>
+                <input ui-date="dateOptions" name="dateInput" ng-model="dateChosen" ng-required="true" placeholder="Enter date here" />   <!-- http://jqueryui.com/datepicker/#date-formats -->
+                <button class="btn" ng-click="open()"><i class="icon-calendar"></i></button>
+            </div>
+            <hr />
+            <button class="btn btn-small btn-inverse" ng-click="today()">Today</button>
+            <button class="btn btn-small btn-inverse" ng-click="changeLocation('back')">BRU->EREM</button>
+            <button class="btn btn-small btn-inverse" ng-click="changeLocation('go')">EREM->BRU</button>
+        </div>
+
+        <label ng-show="debug">date={{dateChosen | date:'yyyy-MM-dd'}}</label>
+        <label ng-show="debug">url={{url}}</label>
+        <label ng-show="debug">output={{output}}</label>
+    </div>
+</div>
+</body>
+</html>
+
